@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+<div class="jumbotron">
+  <h1 class="display-4"><%= @category.name %></h1>
+  <hr class="my-4">
+  <div>
+    <%= link_to "Edit this category", edit_category_path(@category) , class:"btn btn-secondary"%>
+    <%= link_to "Back to categories", categories_path, class:"btn btn-dark" %>
+  </div>
+</div>

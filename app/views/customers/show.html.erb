@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+<div class="jumbotron">
+  <h1 class="display-4"><%= @customer.first_name %> </h1>
+  <p class="lead"><%= @customer.last_name%> | <%= @customer.email%></p>
+  <%# <hr class="my-4"> %>
+  <div>
+    <%= link_to "Edit this customer", edit_menu_path(@customer) , class:"btn btn-secondary"%>
+    <%= link_to "Back to customers", customers_path, class:"btn btn-dark" %>
+  </div>
+</div>

@@ -12,15 +12,18 @@ class MenusController < ApplicationController
 
   # GET /menus/new
   def new
+    @categories = Category.all
     @menu = Menu.new
   end
 
   # GET /menus/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /menus or /menus.json
   def create
+    @categories = Category.all
     @menu = Menu.new(menu_params)
 
     respond_to do |format|
@@ -65,6 +68,6 @@ class MenusController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def menu_params
-      params.require(:menu).permit(:name, :price)
+      params.require(:menu).permit(:name, :price, :description, :category_id)
     end
 end

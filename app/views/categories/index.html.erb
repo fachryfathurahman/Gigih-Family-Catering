@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+<h1>Categories</h1>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"><b>Name</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td scope="row"><%= category.name %></td>
+        <td>
+          <%= link_to "Show", category, class:"btn btn-info" %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_category_path(category),  class:"btn btn-secondary" %>
+        </td>
+        <td>
+          <%= button_to "Destroy", category, method: :delete, class:"btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "New category", new_category_path, class:"btn btn-secondary" %>

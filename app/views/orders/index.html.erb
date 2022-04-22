@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+<h1>Orders</h1>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"><b>Order Date</b></th>
+      <th scope="col"><b>Customer</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td scope="row"><%= order.order_date %></td>
+        <td><%= order.customer_id %></td>
+        <td>
+          <%= link_to "Show", order, class:"btn btn-info" %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_order_path(order),  class:"btn btn-secondary" %>
+        </td>
+        <td>
+          <%= button_to "Destroy", order, method: :delete, class:"btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "New order", new_order_path, class:"btn btn-secondary" %>

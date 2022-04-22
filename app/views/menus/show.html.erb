@@ -1,10 +1,12 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @menu %>
-
-<div>
-  <%= link_to "Edit this menu", edit_menu_path(@menu) %> |
-  <%= link_to "Back to menus", menus_path %>
-
-  <%= button_to "Destroy this menu", @menu, method: :delete %>
+<div class="jumbotron">
+  <h1 class="display-4"><%= @menu.name %></h1>
+  <p class="lead">Harga Menu ini adalah <%= @menu.price%>.</p>
+  <p class="lead"><%= @menu.description%>.</p>
+  <p class="lead">Category nya adalah <%= @menu.category.name%>.</p>
+  <hr class="my-4">
+  <div>
+    <%= link_to "Edit this menu", edit_menu_path(@menu) , class:"btn btn-secondary"%>
+    <%= link_to "Back to menus", menus_path, class:"btn btn-dark" %>
+  </div>
 </div>
